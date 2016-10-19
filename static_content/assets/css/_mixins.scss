@@ -1,0 +1,99 @@
+//Main body layout
+@mixin bodyLayout{
+
+  font-family: $raleway;
+  font-size: 16px;
+  background: url('../img/tile.jpg')top left repeat;
+
+}
+
+@mixin sexyText{
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizelegibility;
+}
+
+@mixin niceHeaders{
+    @include sexyText;
+    font-weight: bold;
+
+}
+
+@mixin features-sprites{
+  display:inline-block;
+  height: 40px;
+  width: 40px;
+  background: url("../img/icon-sprite2.png")no-repeat;
+}
+
+@mixin hero{
+  background: url('../img/hero-bg.jpg') 50% 0 repeat fixed;
+  min-height: 500px;
+
+  position: relative;
+  display: table;
+  width: 100%;
+
+  padding: 50px 0 0 0;
+  color: white;
+}
+
+@mixin price-sphere {
+  position: absolute;
+  width: 120px;
+  text-align: center;
+  line-height: 70px;
+  bottom :-50px;
+  left: 50%;
+  margin-left: -60px;
+  border-radius: 100%;
+  background-color: black;
+
+
+}
+
+//Mixin for small screens
+@mixin small-screens {
+  @media screen and (max-width: 767px) {
+    @content;
+  }
+}
+
+//Mixin for apple ipad and medium screens resolutions
+@mixin apple-and-medium-screens{
+  @media (min-width: 768px) and (max-width: 1024px){
+    @content;
+  }
+}
+
+//Mixin for large screens
+@mixin large-screens{
+  @media screen and (min-width: 1025px){
+    @content;
+  }
+}
+
+//Mixin for exstra large screens 
+@mixin xlarge-screens{
+  @media screen and (min-width: 1200px){
+    @content;
+  }
+}
+
+@mixin testBorder{
+  border: 1px solid black;
+}
+
+@mixin post-comments-badge{
+  height: 70px;
+  width: 70px;
+  position: absolute;
+  right: 25px;
+  top:25px;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  background-color: $green;
+  display: table;
+  text-align: center;
+}
+

@@ -1,0 +1,631 @@
+@import "variables";
+@import "mixins";
+
+.test-border{
+  border :1px solid black;
+}
+html {
+  height: 100%;
+}
+/*Body layout*/
+body{
+  min-height: 100%;
+  @include bodyLayout;
+  padding:0;
+  margin-top:50px;
+}
+
+/*Headers layout*/
+h1,h2,h3,h4,h5,h6{
+  @include niceHeaders;
+}
+
+h1{
+  font-size: 3em;
+}
+
+h1,h2{
+  margin: 10px 0 30px;
+}
+
+h3{
+  margin: 20px 0;
+}
+
+.img-logo{
+  width:200px;
+
+}
+
+.displayInlineBlock{
+  display: inline-block;
+}
+
+/*Hero-------*/
+#hero{
+  @include hero;
+  @include  sexyText;
+  .hero-text{
+    margin-top: 30px;
+  }
+}
+
+#hero article {
+  width: 100%;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+
+.price-timeline {
+  padding: 14px;
+  text-align: center;
+}
+
+.price {
+  vertical-align: top;
+  background-color: $bluegray;
+  position: relative;
+  display: inline-block;
+
+  height: 90px;
+  box-sizing: border-box;
+
+}
+
+.modal-body{
+  background: url("../img/tile.jpg")top left repeat;
+}
+.fa{
+  font-size: 20px;
+
+}
+
+.btn{
+  font-weight: bold;
+}
+
+.btn-danger{
+  border-color: white;
+  background-color: $orange;
+}
+
+.price-sphere{
+  @include price-sphere;
+}
+
+#quoteLine {
+  padding: 15px;
+  background-color: $bluegray;
+  max-height: 72px;
+  color: white;
+  @include  sexyText;
+  font-size: 1.2em;
+}
+
+
+.lead{
+ padding-top: 7px;
+}
+
+#whatIsWordpress,#final-features{
+  text-align: center;
+}
+
+button, input, .btn, a.btn{
+  @include sexyText;
+  color: white;
+}
+
+.align-center{
+  text-align: center;
+}
+
+.section-header{
+  text-align: center;
+
+}
+.section-padding{
+  padding: 30px 0px 40px 0px;
+}
+
+
+#whoBenefits{
+  background-color: white;
+}
+
+#wordpress-feautures{
+  text-align: center;
+  background-color: $bluegray;
+  color: white;
+}
+
+.features{
+  font-size: 0.9em;
+}
+
+i.features-sprites {
+  @include features-sprites;
+}
+.features-sprites.ci-computer{background-position: (-40px 0);  }
+.features-sprites.ci-watch{background-position: (-200px 0);  }
+.features-sprites.ci-facebook{background-position: (-160px 0);  }
+.features-sprites.ci-documentation{ background-position: (-120px 0);  }
+.features-sprites.ci-ecommerce{  background-position: (-80px 0); }
+
+
+.img-center{
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.features-img-boxes{
+  margin: 30px 0px 5px 0;
+  height: 110px;
+}
+.features-img-wordpress{
+  padding: 50px 0px 5px 0;
+  height: 140px;/*140px is the same as the total height .features-img-boxes with margin*/
+}
+
+#youtube-video{
+  background: url('../img/stuff-bg.jpg')50% 100% repeat fixed;
+  background-size: cover;
+  color: white;
+
+}
+
+#developer{
+  text-align: left;
+  background-color: white;
+}
+
+.testimonials{
+  padding-top: 10px;
+  margin:10px;
+}
+
+blockquote cite{
+  display: block;
+  margin-top: 20px;
+}
+
+
+.badge.social{
+  background: #ccc;
+  font-size: 24px;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  line-height: 42px;
+  margin: 0 5px 20px 0;
+  padding: 0;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  color: white;
+}
+
+.badge {
+  display: inline-block;
+  min-width: 10px;
+  padding: 3px 7px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  background-color: #777;
+  border-radius: 10px;
+}
+.badge.linkedin {
+  &:hover {
+    background-color: darken(blue, 5%);
+  }
+}
+.badge.github {
+  &:hover {
+    background-color: darken(mediumpurple, 25%);
+  }
+}
+
+.num{
+  display: table;
+  background-color: $orange;
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100% ;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  line-height: 25px;
+  height: 140px;
+  width: 140px;
+  @include sexyText;
+  margin: 0 auto;
+}
+
+
+
+#signup{
+  padding: 150px 0 ;
+  background: url('../img/hipster-stuff.jpg') center center repeat fixed;
+  background-size: cover;
+  color: white;
+  text-align: center;
+
+}
+
+/*WITH THIS TRICK AND IF THE PARENT OF .num-content IS DISPLAY TABLE
+VERTICAL ALIGN WORKS PERFECTLY*/
+#developer .num .num-content{
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+#developer .num span{
+  display: block;
+  font-size: 15px;
+  font-weight: normal;
+}
+
+.skilled{
+  padding-left: 30px;
+  margin-top: 15px;
+}
+
+footer{
+  height: 50px;
+  padding-top: 15px;
+  background-color: $bluegray;
+  text-align: center;
+  color: white;
+
+}
+
+
+#backToTop{
+  padding: 0;
+  line-height: 22px;
+}
+
+.footer-logo{
+  padding-left: 15px;
+}
+
+/*BLOG LAYOUT==============================*/
+#primary{
+  padding: 40px 0 40px 0;
+}
+
+.top-image {
+  color: white;
+  display: table;
+  width: 100%;
+  height: 200px;
+}
+
+.feature-image-default {
+  background: url('../img/stuff-feature.jpg') no-repeat;
+  background-size: cover;
+}
+
+.feature-image-default-alt{
+  background: url(../img/hipster-stuff.jpg)no-repeat;
+  background-size: cover;
+}
+
+.top-header{
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+a {
+  color: $orange;
+  &:hover {
+    color: darken($orange, 10%);
+    text-decoration: none
+  }
+}
+
+.post , .widget, #comments{
+  border: 1px solid #dddddd;
+  position: relative;
+  background-color: white;
+  margin: 0 0 40px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+
+}
+
+.widget{
+  padding: 20px;
+  h4{
+    margin:0 0 10px;
+    padding: 0 0 10px;
+    border-bottom: 1px solid $light-gray;
+  }
+  ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li{
+      margin: 0 0 5px;
+      &:hover{
+        position: relative;
+        left: 2px;
+        color: darken($orange, 10%);
+      }
+    }
+  }
+}
+
+.post header , .post-excerpt , .post-body, #comments .comments-wrap{
+    padding: 20px;
+
+}
+
+
+
+.post header h3,.post header h1{
+  margin:0 0 15px;
+  padding: 0 0 15px;
+  border-bottom: 1px solid #dddddd;
+
+}
+
+.post header h1{
+  font-size: 24px;
+}
+
+.post-image{
+  height: auto;
+}
+
+.post-details{
+  width: 90%;
+  font-size: 12px;
+
+}
+
+.post-details {
+  i.fa{
+    padding-left: 10px;
+  &:first-child{
+      padding: 0;
+    }
+  }
+}
+
+//===========Comments================
+
+.post-comments-badge{
+  @include post-comments-badge;
+
+  a{
+    display: table-cell;
+    vertical-align: middle;
+    color: white;
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+  i.fa{
+    display: block;
+    font-size: 15px;
+    padding: 0;
+    margin-bottom: 4px;
+  }
+  &:hover{
+    background-color: lighten($green,10%);
+  }
+}
+
+#comments  {
+  h3{
+    text-align: center;
+  }
+  h4{
+    font-size: 1.3em;
+  }
+
+  ol{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li{
+      background: rgba(0,0,0,0.02);
+      padding: 10px 20px;
+      margin: 10px 0;
+      border: 1px solid rgba(0,0,0,0.03);
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      border-radius: 4px;
+    }
+  }
+
+  ol.children{
+    padding: 0;
+    list-style: none;
+    font-size: 0.96em;
+  }
+}//End comments style
+
+#leave-comment{
+  margin: 40px 0 0;
+  padding: 20px 0 0 ;
+}
+
+
+
+
+/*=========== BLOG LAYOUT END ==============>*/
+
+/*Resources page ========================>*/
+
+.resource{
+  float: left;
+  width: 31.333333%;
+  margin: 0 3% 40px 0;
+  &:nth-child(3n){
+    margin-right: 0;
+  }
+
+}
+
+
+/*==========Forms=====*/
+input,textarea{
+  color: $input-color;
+  border: 1px solid $forms-border;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 6px 12px;
+}
+
+input[type="submit"]:hover{
+  background-color: darken($light-gray,10%);
+}
+
+
+
+
+/* Small screens layout*/
+@include small-screens{
+  .price{
+    display: block;
+    width: 100%;
+    margin-bottom: 50px;
+  }
+
+  #quoteLine{
+    max-height: 140px;
+    padding: 10px;
+    text-align: center;
+  }
+
+  h4{
+    font-size: 1.1em;
+  }
+
+  .num-content{
+
+  }
+
+
+  .developer-name{
+    text-align: left;
+  }
+
+  .developer-image{
+    margin-top: 20px;
+  }
+
+  #kudos,.testimonials{
+    text-align: center;
+  }
+
+  .num{
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    line-height: 20px;
+    height: 90px;
+    width: 90px;
+    @include sexyText;
+    margin: 0 auto;
+  }
+
+  #developer .num span{
+    display: block;
+    font-size: 10px;
+    font-weight: normal;
+  }
+
+  .resource{
+    width: 100%;
+    text-align: center;
+  }
+
+  footer{
+    height: 100%;
+  }
+
+}
+
+/* Apple and medium screens layout*/
+@include apple-and-medium-screens{
+  .align-center{
+    text-align: center;
+
+  }
+  .price{
+    display: inline-block;
+    width: 30%;
+    height: 120px;
+    margin-bottom: 50px;
+
+    .price-sphere{
+      margin-left: -50px;
+      font-size: 14px;
+      width: 100px;
+    }
+  }
+
+  .img-logo{
+    width:190px;
+    margin-left:20px;
+  }
+
+
+  #quoteLine{
+    max-height: 120px;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .lead{
+    margin-top: 0px;
+  }
+
+  .developer-image{
+    margin-top: 20px;
+  }
+}
+/* Large screens layout*/
+@include large-screens{
+  .price{
+    display: inline-block;
+    width: 30%;
+
+  }
+  #quoteLine{
+    text-align: center;
+  }
+
+  .lead{
+    margin-top: 0px;
+  }
+}
+
+@include xlarge-screens{
+  .price{
+    max-height: 90px;
+  }
+}
+
+
+
+

@@ -1,0 +1,6 @@
+Database name testwordpress
+password : 3ZEJ3S9n6ZjWfmPu
+
+Site Title : Test Wordpress
+Username : george_admin
+password : Redwizard1@
