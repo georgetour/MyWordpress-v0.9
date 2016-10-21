@@ -1,5 +1,6 @@
 $(document).ready(function () {
 
+
     //Cache the window object
     var $window = $(window);
 

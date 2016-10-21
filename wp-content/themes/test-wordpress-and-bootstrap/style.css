@@ -350,7 +350,7 @@ body {
 	min-height: 100%;
 	font-family: "Raleway", Helvetica, sans-serif;
 	font-size: 16px;
-	background: url("../img/tile.jpg") top left repeat;
+	background: url('assets/img/tile.jpg') top left repeat;
 	padding: 0;
 	margin-top: 50px; }
 
@@ -383,7 +383,7 @@ h3 {
 
 /*Hero-------*/
 #hero {
-	background: url("../img/hero-bg.jpg") 50% 0 repeat fixed;
+	background: url("assets/img/hero-bg.jpg") 50% 0 repeat fixed;
 	min-height: 500px;
 	position: relative;
 	display: table;
@@ -414,7 +414,7 @@ h3 {
 	box-sizing: border-box; }
 
 .modal-body {
-	background: url("../img/tile.jpg") top left repeat; }
+	background: url("/wp-content/themes/test-wordpress-and-bootstrap/assets/img/tile.jpg") top left repeat; }
 
 .fa {
 	font-size: 20px; }
@@ -477,11 +477,14 @@ button, input, .btn, a.btn {
 .features {
 	font-size: 0.9em; }
 
+
+/*This is a trick that you load only one image and playing with background positionj we will show only
+what we want !*/
 i.features-sprites {
 	display: inline-block;
 	height: 40px;
 	width: 40px;
-	background: url("../img/icon-sprite2.png") no-repeat; }
+	background: url("assets/img/icon-sprite2.png") no-repeat; }
 
 .features-sprites.ci-computer {
 	background-position: -40px 0; }
@@ -497,6 +500,8 @@ i.features-sprites {
 
 .features-sprites.ci-ecommerce {
 	background-position: -80px 0; }
+/*End Trick */
+
 
 .img-center {
 	margin-right: auto;
@@ -512,7 +517,7 @@ i.features-sprites {
 	/*140px is the same as the total height .features-img-boxes with margin*/ }
 
 #youtube-video {
-	background: url("../img/stuff-bg.jpg") 50% 100% repeat fixed;
+	background: url("assets/img/stuff-bg.jpg") 50% 100% repeat fixed;
 	background-size: cover;
 	color: white; }
 
@@ -581,7 +586,7 @@ blockquote cite {
 
 #signup {
 	padding: 150px 0;
-	background: url("../img/hipster-stuff.jpg") center center repeat fixed;
+	background: url("assets/img/hipster-stuff.jpg") center center repeat fixed;
 	background-size: cover;
 	color: white;
 	text-align: center; }
@@ -627,7 +632,7 @@ footer {
 	height: 200px; }
 
 .feature-image-default {
-	background: url("../img/stuff-feature.jpg") no-repeat;
+	background: url("/wp-content/themes/test-wordpress-and-bootstrap/assets/img/stuff-feature.jpg") no-repeat;
 	background-size: cover; }
 
 .feature-image-default-alt {
@@ -769,6 +774,8 @@ input, textarea {
 input[type="submit"]:hover {
 	background-color: #c4c4c4; }
 
+/*==========Media Queries===================*/
+
 /* Small screens layout*/
 @media screen and (max-width: 767px) {
 	.price {
@@ -816,6 +823,17 @@ input[type="submit"]:hover {
 
 	footer {
 		height: 100%; } }
+
+
+/*Wordpress fix resolution */
+@media screen and (max-width: 782px){
+	.logged-in .navbar-fixed-top{
+		top:46px;
+	}
+}
+
+
+
 /* Apple and medium screens layout*/
 @media (min-width: 768px) and (max-width: 1024px) {
 	.align-center {
