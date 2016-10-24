@@ -4,7 +4,16 @@
  *
  */
 
-$blog = "<?php bloginfo('stylesheet_directory')?>";
+$blog = get_stylesheet_directory_uri();
+
+//Custom fields
+$wordpress_password = get_post_meta(28, 'wordpress_password',true); //Three arguments id of the page, value of the string, true single or faALSE array of custom fields
+$how_it_works = get_post_meta(28, 'how_it_works',true);
+$create_site = get_post_meta(28, 'create_site',true);
+$enroll_url = get_post_meta(28, 'enroll_url',true);
+$button_text =get_post_meta(28, 'button_text',true);
+$quote_line =get_post_meta(28, 'quote_line',true);
+$quote_button =get_post_meta(28, 'quote_button',true);
 
 get_header(); ?>
 
@@ -16,30 +25,32 @@ get_header(); ?>
                     <div class="col-sm-5 "><!--Left column-->
                         <img class=" img-responsive img-center" src="<?php bloginfo('stylesheet_directory')?>/assets/img/test-wordpress-logo.png" alt="Test Wordpress">
                     </div><!--End Left column----->
-                    <div class="col-sm-7"><!--Right column-->
-                        <h1 >Test Wordpress here easily!</h1>
+
+                    <!--Right column-->
+                    <div class="col-sm-7">
+                        <!--This one pulls from general settings in dashboard Site Title -->
+                        <h1 ><?php bloginfo('name');?></h1>
                         <h2 >You will see how Wordpress works!</h2>
-                        <p>Using bootstrap with Wordpress for a fully manageable and responsive site.
-                            You will receive a link and code for a limited time so you can see how
-                            Wordpress works.
+                        <!--This one pulls from general settings in dashboard Tag Line -->
+                        <p><?php bloginfo('description')?>
                         </p>
                         <div class="price-timeline  ">
                             <div class=" price ">
                                 <h4>Get your Wordpress <br>password.
-                                    <div class="price-sphere">Free!</div></h4>
+                                    <div class="price-sphere"><?php echo $wordpress_password?></div></h4>
                             </div>
 
                             <div class="price">
                                 <h4>Test how Wordpress works.
-                                    <div class="price-sphere"> Free!</div>
+                                    <div class="price-sphere"><?php echo $how_it_works?></div>
                                 </h4>
                             </div>
                             <div class="price">
                                 <h4>Let me create your Wordpress site.
-                                    <div class="price-sphere"> Free Quote!</div>
+                                    <div class="price-sphere"><?php echo $create_site?></div>
                                 </h4>
                             </div>
-                            <p style="margin-top: 70px"><a class="btn btn-lg btn-danger" href="index.php" role="button">Enroll &raquo;</a></p>
+                            <p style="margin-top: 70px"><a class="btn btn-lg btn-danger" href="<?php echo $enroll_url?>" role="button"><?php echo $button_text?></a></p>
                         </div><!--Right column end-->
 
                     </div>
@@ -53,12 +64,12 @@ get_header(); ?>
         <div class="container ">
             <div class="row">
                 <div  class="col-lg-7">
-                    <div  class="lead align-center"><strong>If you enjoyed Wordpress I will create your site in Wordpress.</strong>
+                    <div  class="lead align-center"><strong><?php echo $quote_line?></strong>
                     </div>
 
                 </div>
                 <div class="col-lg-5">
-                    <button class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#myModal" role="button">Get quote now!</button>
+                    <button class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#myModal" role="button"><?php echo $quote_button?></button>
                 </div>
             </div>
         </div><!--End container----------------->
@@ -70,9 +81,9 @@ get_header(); ?>
             <div class="container">
                 <div class="section-header">
                     <img class=" img-responsive img-center" src="<?php bloginfo('stylesheet_directory')?>/assets/img/Wordpress-logo.png" alt="Wordpress logo">
-                    <p><?php echo $blog?></p>
                     <h2>What is Wordpress?</h2>
-                    <p class="lead">Wordpress is a leading Custom Management System
+
+                    <p class="lead">Wordpress is a leading Content Management System
                         that is used by many companies, sites, blogs.
                     </p>
                 </div>
