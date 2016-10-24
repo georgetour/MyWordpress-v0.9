@@ -15,6 +15,17 @@ $button_text =get_post_meta(28, 'button_text',true);
 $quote_line =get_post_meta(28, 'quote_line',true);
 $quote_button =get_post_meta(28, 'quote_button',true);
 
+//Advanced Custom Fields
+$wordpress_image_logo    = get_field('wordpress_image_logo');
+$what_is_wordpress_title = get_field('what_is_wordpress_title');
+$what_is_wordpress_desc  = get_field('what_is_wordpress_description');
+$left_title              = get_field('no_coding_title');
+$left_description        = get_field('no_coding_description');
+$right_title             = get_field('enroll_to_test_it_now_title');
+$right_description       = get_field('enroll_to_test_it_description');
+$who_benefits_title      = get_field('who_benefits_title');
+$who_benefits_body       = get_field('who_benefits_body');
+
 get_header(); ?>
 
     <!-- HERO -------------------------->
@@ -80,27 +91,27 @@ get_header(); ?>
         <article>
             <div class="container">
                 <div class="section-header">
-                    <img class=" img-responsive img-center" src="<?php bloginfo('stylesheet_directory')?>/assets/img/Wordpress-logo.png" alt="Wordpress logo">
-                    <h2>What is Wordpress?</h2>
 
-                    <p class="lead">Wordpress is a leading Content Management System
-                        that is used by many companies, sites, blogs.
-                    </p>
+                    <!--If user uploaded an image-->
+                    <?php if(!empty($wordpress_image_logo)) :  ?>
+                        <img class=" img-responsive img-center" src="<?php echo $wordpress_image_logo['url'];?>"
+                             alt="<?php echo $wordpress_image_logo['alt']; ?>">
+                    <?php endif;?>
+
+
+                    <h2><?php echo $what_is_wordpress_title?></h2>
+                    <p class="lead"><?php echo $what_is_wordpress_desc?></p>
                 </div>
                 <div class="row">
+                    <!--Left column-->
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12  ">
-                        <h3>No coding at all!</h3>
-                        <p>With Wordpress anyone without coding or programming at all
-                            can make changes to his site, add content,  themes, updates and
-                            in other words, anything an administrator could do.
-                        </p>
-
+                        <h3><?php echo $left_title?></h3>
+                        <p><?php echo $left_description ?></p>
                     </div>
+                    <!--Right Column-->
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
-                        <h3>Enroll above to TEST IT NOW!</h3>
-                        <p>If you can't imagine what I mean you should test it.
-
-                        </p>
+                        <h3><?php echo $right_title?></h3>
+                        <p><?php echo $right_description?></p>
                     </div>
                 </div>
             </div>
@@ -112,21 +123,8 @@ get_header(); ?>
         <div class="container">
             <div class="row">
                 <div class="section-header col-lg-8 col-lg-offset-2"><!--Using bootstrap offset technique--->
-                    <h2>Who benefits from Wordpress?</h2>
-                    <h3>Companies</h3>
-                    <p>Any company can use it if they want to update their sites content simple and fast.
-                        From Fortune, BBC to small local shops.
-                    </p>
-                    <h3>Personal/portfolio sites</h3>
-                    <p class="align-center">A site that doesn't get updates
-                        and new content becomes boring and less visited over time.
-                        Even for your personal, portfolio site you need to update it so you can attract new visitors and employers.
-                    </p>
-                    <h3>Bloggers</h3>
-                    <p>Wordpress started as a blog platform so people could make blogs without coding.
-                        It's so powerful though that's used by any kind of sites nowdays. </p>
-                    <h3>No extra money for you to spend</h3>
-                    <p>Since you will be able to update your site, you won't need to pay developers for each change.</p>
+                    <h2><?php echo $who_benefits_title ?></h2>
+                    <p><?php echo $who_benefits_body ?></p>
                 </div>
             </div>
         </div><!--whoBenefits container end--------->
