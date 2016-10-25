@@ -35,6 +35,10 @@ $features_section_image  = get_field('features_section_image');
 $features_section_title  = get_field('features_section_title');
 $features_section_body   = get_field('features_section_body');
 
+//Final site features
+$final_site_features_title = get_field('final_site_features_title');
+$final_site_features_body = get_field('final_site_features_body');
+
 get_header(); ?>
 
     <!-- HERO -------------------------->
@@ -161,6 +165,7 @@ get_header(); ?>
 
                 <?php $loop = new WP_Query(array('post_type' => 'wordpress_features',
                     'orderby' => 'post_id', 'order' => 'ASC'));?>
+                
                 <div class="col-lg-8 col-lg-offset-2">
                     <div class="col-sm-1"></div>
                     <?php while ($loop->have_posts()): $loop->the_post(); ?>
@@ -182,37 +187,26 @@ get_header(); ?>
     <section id="final-features" class="section-padding">
         <div class="container">
             <div class="section-header">
-                <h2>Final site features</h2>
-                <p>At the end you will have a very beautiful and powerful site.</p>
+                <h2><?php echo $final_site_features_title?></h2>
+                <p><?php echo $final_site_features_body?></p>
             </div>
             <div class="row">
-                <div class="col-sm-4 ">
-                    <div class="features-img-boxes">
-                        <img class="img-responsive img-center" style="width: 150px" src="<?php bloginfo('stylesheet_directory')?>/assets/img/Responsive-Web-Design-compressor.png">
-                    </div>
-                    <h4 class="features">A professional and smart website.</h4>
-                    <p>It will fulfill all your needs and your clients will enjoy it
-                        in all devices.
-                    </p>
-                </div>
-                <div class="col-sm-4 ">
-                    <div class="features-img-boxes">
-                        <img class="img-responsive img-center"style="height: 110px" src="<?php bloginfo('stylesheet_directory')?>/assets/img/premium-quality.png">
-                    </div>
-                    <h4 class="features">Premium quality.</h4>
-                    <p>All my projects have quality and clean code so users
-                        receive maximum experience.
-                    </p>
-                </div>
-                <div class="col-sm-4 ">
-                    <div class="features-img-wordpress">
-                        <img class="img-responsive img-center" style="width: 300px;" src="<?php bloginfo('stylesheet_directory')?>/assets/img/Wordpress-logo.png">
-                    </div>
-                    <h4 class="features">Easy-to-use with Wordpress</h4>
-                    <p>As you saw you will have control of your site since your site will be
-                        dynamically updated by you.
-                    </p>
-                </div>
+                <?php $loop = new WP_Query(array('post_type' => 'final_site_feature',
+                    'orderby' => 'post_id', 'order' => 'ASC'));?>
+
+                    <?php while ($loop->have_posts()): $loop->the_post(); ?>
+
+                        <div class="col-sm-4 features-images">
+                            <div class="features-img-boxes">
+                            <?php if(has_post_thumbnail()){the_post_thumbnail('thumbnail',array('class'=> 'final-site-features-img img-responsive img-center'));} ?>
+                            </div>
+
+                            <h4 class="features"><?php the_title();?></h4>
+                            <p><?php the_content();?></p>
+                        </div>
+                    <?php endwhile;?>
+
+
             </div>
         </div>
     </section><!--End Final Site FEATURES  ---------------------->
@@ -264,21 +258,21 @@ get_header(); ?>
                     <hr>
                     <div class="row "><!--Numbers row------------------->
                         <h3 class="align-center">The numbers don't lie</h3>
-                        <div class="col-xs-4 ">
+                        <div class="col-xs-4 features-img-boxes">
                             <div class="num ">
                                 <div class="num-content ">
                                     3+<span> years experience</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xs-4 ">
+                        <div class="col-xs-4 features-img-boxes">
                             <div class="num">
                                 <div class="num-content">
                                     20+<span> High quality projects</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xs-4 ">
+                        <div class="col-xs-4 features-img-boxes">
                             <div class="num">
                                 <div class="num-content">
                                     150000+<span> Lines of code</span>

@@ -59,5 +59,5 @@ $(document).ready(function () {
     }
     //End active class according to location
 
-
+    
 });
