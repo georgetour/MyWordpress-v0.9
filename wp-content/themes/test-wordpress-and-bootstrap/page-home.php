@@ -15,7 +15,9 @@ $button_text =get_post_meta(28, 'button_text',true);
 $quote_line =get_post_meta(28, 'quote_line',true);
 $quote_button =get_post_meta(28, 'quote_button',true);
 
-//Advanced Custom Fields
+//======Advanced Custom Fields=====
+
+//What is Wordpress section
 $wordpress_image_logo    = get_field('wordpress_image_logo');
 $what_is_wordpress_title = get_field('what_is_wordpress_title');
 $what_is_wordpress_desc  = get_field('what_is_wordpress_description');
@@ -23,8 +25,15 @@ $left_title              = get_field('no_coding_title');
 $left_description        = get_field('no_coding_description');
 $right_title             = get_field('enroll_to_test_it_now_title');
 $right_description       = get_field('enroll_to_test_it_description');
+
+//Who benefits section
 $who_benefits_title      = get_field('who_benefits_title');
 $who_benefits_body       = get_field('who_benefits_body');
+
+//Wordpress features section
+$features_section_image  = get_field('features_section_image');
+$features_section_title  = get_field('features_section_title');
+$features_section_body   = get_field('features_section_body');
 
 get_header(); ?>
 
@@ -135,30 +144,33 @@ get_header(); ?>
     <section id="wordpress-feautures" class="section-padding">
         <div class="container ">
             <div class="section-header">
-                <h2>Wordpress features</h2>
+                <!--If user uploaded an image-->
+                <?php if(!empty($features_section_image)) :  ?>
+                    <img class=" img-responsive img-center" src="<?php echo $features_section_image['url'];?>"
+                         alt="<?php echo $features_section_image['alt']; ?>">
+                <?php endif;?>
+
+                <h2><?php echo $features_section_title?></h2>
+
+                <?php if(!empty($features_section_body)):?>
+                <p class="lead"><?php echo $features_section_body?></p>
+                <?php endif;?>
+
             </div>
             <div class="row">
+
+                <?php $loop = new WP_Query(array('post_type' => 'wordpress_features',
+                    'orderby' => 'post_id', 'order' => 'ASC'));?>
                 <div class="col-lg-8 col-lg-offset-2">
-                    <div class="col-sm-2 col-sm-offset-1 ">
-                        <i class="features-sprites ci-computer"></i>
-                        <h4 class="features">Easy update  your site.</h4>
-                    </div>
-                    <div class="col-sm-2 ">
-                        <i class="features-sprites ci-watch"></i>
-                        <h4 class="features">Pre-made themes to choose if you don't want a custom one.</h4>
-                    </div>
-                    <div class="col-sm-2 ">
-                        <i class="features-sprites ci-facebook"></i>
-                        <h4 class="features">Many plugins that will do stuff for you.</h4>
-                    </div>
-                    <div class="col-sm-2 ">
-                        <i class="features-sprites ci-documentation"></i>
-                        <h4 class="features">Active community and documentation.</h4>
-                    </div>
-                    <div class="col-sm-2 ">
-                        <i class="features-sprites ci-ecommerce"></i>
-                        <h4 class="features">E-commerce solutions.</h4>
-                    </div>
+                    <div class="col-sm-1"></div>
+                    <?php while ($loop->have_posts()): $loop->the_post(); ?>
+
+                        <div class="col-sm-2 ">
+                            <i class="<?php the_field('wordpress_feature_icon');?>"></i>
+                            <h4 class="features"><?php the_title();?></h4>
+                        </div>
+                    <?php endwhile;?>
+                    <div class="col-sm-1"></div>
 
                 </div>
             </div>

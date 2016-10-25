@@ -349,7 +349,7 @@ html {
 body {
 	min-height: 100%;
 	font-family: "Raleway", Helvetica, sans-serif;
-	font-size: 16px;
+	font-size: 18px;
 	background: url('assets/img/tile.jpg') top left repeat;
 	padding: 0;
 	margin-top: 50px; }
@@ -472,7 +472,10 @@ button, input, .btn, a.btn {
 #wordpress-feautures {
 	text-align: center;
 	background-color: #3e4249;
-	color: white; }
+	color: white;
+	font-size: 16px;
+
+}
 
 .features {
 	font-size: 0.9em; }
@@ -486,11 +489,13 @@ i.features-sprites {
 	width: 40px;
 	background: url("assets/img/icon-sprite2.png") no-repeat; }
 
-.features-sprites.ci-computer {
+.features-sprites.ci-watch {
 	background-position: -40px 0; }
 
-.features-sprites.ci-watch {
+.features-sprites.ci-theme {
 	background-position: -200px 0; }
+
+
 
 .features-sprites.ci-facebook {
 	background-position: -160px 0; }
@@ -506,6 +511,7 @@ i.features-sprites {
 .img-center {
 	margin-right: auto;
 	margin-left: auto; }
+
 
 .features-img-boxes {
 	margin: 30px 0px 5px 0;
