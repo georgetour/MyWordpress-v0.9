@@ -37,7 +37,26 @@ $features_section_body   = get_field('features_section_body');
 
 //Final site features
 $final_site_features_title = get_field('final_site_features_title');
-$final_site_features_body = get_field('final_site_features_body');
+$final_site_features_body  = get_field('final_site_features_body');
+
+//Youtube video section
+$youtube_video_title     = get_field('youtube_video_title');
+$youtube_video_link     = get_field('youtube_video_link');
+
+//Developer Section
+$developer_title  = get_field('developer_title');
+$developer_name  = get_field('developer_name');
+$developer_image  = get_field('developer_image');
+$bio_excerpt  = get_field('bio_excerpt');
+$bio_full  = get_field('bio_full');
+$numbers_title  = get_field('numbers_title');
+$left_number  = get_field('left_number');
+$left_number_text  = get_field('left_number_text');
+$middle_number_  = get_field('middle_number_');
+$middle_number_text  = get_field('middle_number_text');
+$right_number  = get_field('right_number');
+$right_number_text  = get_field('right_number_text');
+
 
 get_header(); ?>
 
@@ -168,11 +187,12 @@ get_header(); ?>
                 
                 <div class="col-lg-8 col-lg-offset-2">
                     <div class="col-sm-1"></div>
-                    <?php while ($loop->have_posts()): $loop->the_post(); ?>
 
+                    <?php while ($loop->have_posts()): $loop->the_post(); ?>
                         <div class="col-sm-2 ">
+
                             <i class="<?php the_field('wordpress_feature_icon');?>"></i>
-                            <h4 class="features"><?php the_title();?></h4>
+                            <h4 class="features"><?php the_title() ;?></h4>
                         </div>
                     <?php endwhile;?>
                     <div class="col-sm-1"></div>
@@ -216,8 +236,8 @@ get_header(); ?>
         <div class="container">
             <div class="row">
                 <div class="col-sm-8 col-sm-offset-2 align-center">
-                    <h2>Video that explains what is Wordpress by WebSmartTV</h2>
-                    <iframe width="100%" height="415" src="https://www.youtube.com/embed/VdvEdMMtNMY" frameborder="0" allowfullscreen></iframe>
+                    <h2><?php echo $youtube_video_title ?></h2>
+                    <?php echo $youtube_video_link ?>
                 </div>
             </div>
         </div>
@@ -233,49 +253,56 @@ get_header(); ?>
                         <div class="col-md-8 "><!--Left column--->
                             <div class="row">
                                 <div class="col-md-9 col-xs-9 ">
-                                    <h2 style="margin-bottom: 0" class="displayInlineBlock developer-name">Your developer </h2>
-                                    <h2 class="developer-name"><small>George Tourtsinakis</small></h2>
+                                    <h2 style="margin-bottom: 0" class="displayInlineBlock developer-name"><?php echo $developer_title?> </h2>
+                                    <div class=""><small><?php echo $developer_name?></small></div>
                                 </div>
                                 <div class="col-md-3 col-xs-3 ">
                                     <a class="badge social linkedin" href="https://gr.linkedin.com/in/georgetourtsinakis" target="_blank">
                                         <i class="fa fa-linkedin" aria-hidden="true"></i>
                                     </a>
                                     <a class="badge social github" href="https://github.com/georgetour" target="_blank">
-                                        <i class="fa fa-github" aria-hidden="true"></i>
+                                        <i class="<?php echo 'fa fa-github'?>" aria-hidden="true"></i>
                                     </a>
+
                                 </div>
                             </div>
                         </div>
+
                         <div class=" col-md-4  developer-image"><!--Right column--->
-                            <img style="width: 50%" class="img-responsive img-center" src="<?php bloginfo('stylesheet_directory')?>/assets/img/myphoto.jpg" alt="Developer George Tourtsinakis">
+                            <img style="width: 50%" class="img-responsive img-center" src="<?php echo $developer_image['url']?>" alt="Developer George Tourtsinakis">
                         </div>
                     </div>
                     <div class="row">
-                        <div  class="col-md-8 skilled">
-                            <p>A highly skilled professional, George Tourtsinakis is a passionate web designer and developer.</p>
+                        <div  class="col-md-8 ">
+                            <p><strong><?php echo $bio_excerpt?></strong></p>
+                            <?php if(!empty($bio_full)):?>
+                            <p><?php echo $bio_full?></p>
+                            <?php endif;?>
                         </div>
+
                     </div>
                     <hr>
                     <div class="row "><!--Numbers row------------------->
-                        <h3 class="align-center">The numbers don't lie</h3>
+
+                        <h3 class="align-center"><?php echo $numbers_title?></h3>
                         <div class="col-xs-4 features-img-boxes">
                             <div class="num ">
                                 <div class="num-content ">
-                                    3+<span> years experience</span>
+                                    <?php echo $left_number?><span> <?php echo $left_number_text?></span>
                                 </div>
                             </div>
                         </div>
                         <div class="col-xs-4 features-img-boxes">
                             <div class="num">
                                 <div class="num-content">
-                                    20+<span> High quality projects</span>
+                                    <?php echo $middle_number_?><span> <?php echo $middle_number_text?></span>
                                 </div>
                             </div>
                         </div>
                         <div class="col-xs-4 features-img-boxes">
                             <div class="num">
                                 <div class="num-content">
-                                    150000+<span> Lines of code</span>
+                                    <?php echo $right_number?><span> <?php echo $right_number_text?></span>
                                 </div>
                             </div>
                         </div>

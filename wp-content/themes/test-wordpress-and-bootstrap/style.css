@@ -529,6 +529,7 @@ i.features-sprites {
 
 .features-images:nth-child(3) img {
 	padding-top: 20px;
+	max-width: 100%;
 }
 
 #youtube-video {
