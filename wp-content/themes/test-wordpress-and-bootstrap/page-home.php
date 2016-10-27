@@ -10,31 +10,6 @@
 $youtube_video_title     = get_field('youtube_video_title');
 $youtube_video_link     = get_field('youtube_video_link');
 
-
-
-
-
-
-get_header(); ?>
-
-<?php get_template_part('content','hero')?>
-
-<?php get_template_part('content','quote_line')?>
-
-<?php get_template_part('content','aboutWordpress')?>
-
-<?php get_template_part('content','benefits')?>
-
-<?php get_template_part('content','wordpressFeatures')?>
-
-<?php get_template_part('content','finalSiteFeatures')?>
-
-<?php get_template_part('content','youtubeVideo')?>
-
-<?php get_template_part('content','developer')?>
-
-<?php
-
 //Developer Section
 $developer_title  = get_field('developer_title');
 $developer_name  = get_field('developer_name');
@@ -49,7 +24,39 @@ $middle_number_text  = get_field('middle_number_text');
 $right_number  = get_field('right_number');
 $right_number_text  = get_field('right_number_text');
 
-?>
+//Testimonials section
+$testimonials_title = get_field('testimonials_title');
+
+
+get_header(); ?>
+
+<?php get_template_part('template-parts/content','hero')?>
+
+<?php get_template_part('template-parts/content','quote_line')?>
+
+<?php get_template_part('template-parts/content','aboutWordpress')?>
+
+<?php get_template_part('template-parts/content','benefits')?>
+
+<?php get_template_part('template-parts/content','wordpressFeatures')?>
+
+<?php get_template_part('template-parts/content','finaSiteFeatures')?>
+
+
+
+
+    <!-- YOUTUBE VIDEO ------------------------>
+    <section id="youtube-video" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 col-sm-offset-2 align-center">
+                    <h2><?php echo $youtube_video_title ?></h2>
+                    <?php echo $youtube_video_link ?>
+                </div>
+            </div>
+        </div>
+    </section><!--End youtube video------------->
+
 
     <!-- THE Developer  ---------------------------->
     <section id="developer" class="section-padding">
@@ -65,13 +72,13 @@ $right_number_text  = get_field('right_number_text');
                                 </div>
                                 <div class="col-md-3 col-xs-3 ">
                                     <?php $loop = new WP_Query(array('post_type'=>'social_media_icons',
-                                        'orderby'=>'post_id','order'=>'ASC'));?>
+                                    'orderby'=>'post_id','order'=>'ASC'));?>
 
 
                                     <?php while ($loop->have_posts()): $loop->the_post();?>
-                                        <a class="<?php the_field('social_icons_style')?>" href="<?php the_field('social_link') ?>" target="_blank">
-                                            <i class="<?php the_field('social_icons') ?>"></i>
-                                        </a>
+                                    <a class="<?php the_field('social_icons_style')?>" href="<?php the_field('social_link') ?>" target="_blank">
+                                        <i class="<?php the_field('social_icons') ?>"></i>
+                                    </a>
 
                                     <?php endwhile;?>
 
@@ -89,7 +96,7 @@ $right_number_text  = get_field('right_number_text');
                         <div  class="col-md-8 ">
                             <p><strong><?php echo $bio_excerpt?></strong></p>
                             <?php if(!empty($bio_full)):?>
-                                <p><?php echo $bio_full?></p>
+                            <p><?php echo $bio_full?></p>
                             <?php endif;?>
                         </div>
 
@@ -127,32 +134,36 @@ $right_number_text  = get_field('right_number_text');
         </div><!--End container-------------------->
     </section><!--End developer section------------->
 
-
-<?php
-
-//Youtube video section
-$youtube_video_title     = get_field('youtube_video_title');
-$youtube_video_link     = get_field('youtube_video_link');
-
-
-?>
-
-    <!-- YOUTUBE VIDEO ------------------------>
-    <section id="youtube-video" class="section-padding">
+    <!-- TESTIMONIALS-------------------------->
+    <section id="kudos" class="section-padding">
         <div class="container">
             <div class="row">
-                <div class="col-sm-8 col-sm-offset-2 align-center">
-                    <h2><?php echo $youtube_video_title ?></h2>
-                    <?php echo $youtube_video_link ?>
+                <div class="col-sm-10 col-sm-offset-1 ">
+                    <h2 class="align-center"><?php echo $testimonials_title?></h2>
+
+                    <!--Starts the oops for testimonial post-->
+                    <?php $loop = new WP_Query(array('post_type' => 'testimonial',
+                        'orderby' => 'post_id', 'order' => 'ASC'));?>
+                    <?php while ($loop->have_posts()): $loop->the_post(); ?>
+                        <!----TESTIMONIALS------>
+                        <div class="row testimonials">
+                            <div class="col-sm-4 ">
+
+                                <?php if(has_post_thumbnail()){
+                                    the_post_thumbnail(array(200,200));//If someone puts a different size image it will become 200x200
+                                } ?>
+                            </div>
+                            <div class="col-sm-8">
+                                <blockquote><?php the_content()?>
+                                    <cite>&ndash;<?php the_title()?> </cite>
+                                </blockquote>
+                            </div>
+                        </div>
+                    <?php endwhile;?>
                 </div>
             </div>
         </div>
-    </section><!--End youtube video------------->
-
-
-
-
-
+    </section><!-- End TESTIMONIALS----------------->
 
 
 <?php get_footer()?>
