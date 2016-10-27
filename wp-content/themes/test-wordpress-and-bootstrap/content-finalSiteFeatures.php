@@ -27,7 +27,8 @@ $final_site_features_body  = get_field('final_site_features_body');
                     <h4 class="features"><?php the_title();?></h4>
                     <p><?php the_content();?></p>
                 </div>
-                
+                <!--If we don't use the wp_reset_query the next query will be empty with the
+                get_template_part()-->
             <?php endwhile; wp_reset_query()?>
 
         </div>
