@@ -6,9 +6,7 @@
 
 
 
-//Youtube video section
-$youtube_video_title     = get_field('youtube_video_title');
-$youtube_video_link     = get_field('youtube_video_link');
+
 
 //Developer Section
 $developer_title  = get_field('developer_title');
@@ -30,32 +28,36 @@ $testimonials_title = get_field('testimonials_title');
 
 get_header(); ?>
 
-<?php get_template_part('content','hero')?>
 
-<?php get_template_part('content','quote_line')?>
 
-<?php get_template_part('content','aboutWordpress')?>
-
-<?php get_template_part('content','benefits')?>
-
-<?php get_template_part('content','wordpressFeatures')?>
-
-<?php get_template_part('content','finaSiteFeatures')?>
+<?php get_template_part('content','hero');?>
 
 
 
+<?php get_template_part('content','quote_line');?>
 
-    <!-- YOUTUBE VIDEO ------------------------>
-    <section id="youtube-video" class="section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-8 col-sm-offset-2 align-center">
-                    <h2><?php echo $youtube_video_title ?></h2>
-                    <?php echo $youtube_video_link ?>
-                </div>
-            </div>
-        </div>
-    </section><!--End youtube video------------->
+
+
+<?php get_template_part('content','aboutWordpress');?>
+
+
+
+<?php get_template_part('content','benefits');?>
+
+
+
+<?php get_template_part('content','wordpressFeatures');?>
+
+
+
+<?php get_template_part('content','finalSiteFeatures');?>
+
+<?php get_template_part('content','youtubeVideo');?>
+
+
+
+
+
 
 
     <!-- THE Developer  ---------------------------->
@@ -81,8 +83,6 @@ get_header(); ?>
                                     </a>
 
                                     <?php endwhile;?>
-
-
 
                                 </div>
                             </div>
