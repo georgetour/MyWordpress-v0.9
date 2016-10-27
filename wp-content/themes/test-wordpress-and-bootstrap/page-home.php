@@ -57,6 +57,9 @@ $middle_number_text  = get_field('middle_number_text');
 $right_number  = get_field('right_number');
 $right_number_text  = get_field('right_number_text');
 
+//Testimonials section
+$testimonials_title = get_field('testimonials_title');
+
 
 get_header(); ?>
 
@@ -257,12 +260,18 @@ get_header(); ?>
                                     <div class=""><small><?php echo $developer_name?></small></div>
                                 </div>
                                 <div class="col-md-3 col-xs-3 ">
-                                    <a class="badge social linkedin" href="https://gr.linkedin.com/in/georgetourtsinakis" target="_blank">
-                                        <i class="fa fa-linkedin" aria-hidden="true"></i>
+                                    <?php $loop = new WP_Query(array('post_type'=>'social_media_icons',
+                                    'orderby'=>'post_id','order'=>'ASC'));?>
+
+
+                                    <?php while ($loop->have_posts()): $loop->the_post();?>
+                                    <a class="<?php the_field('social_icons_style')?>" href="<?php the_field('social_link') ?>" target="_blank">
+                                        <i class="<?php the_field('social_icons') ?>"></i>
                                     </a>
-                                    <a class="badge social github" href="https://github.com/georgetour" target="_blank">
-                                        <i class="<?php echo 'fa fa-github'?>" aria-hidden="true"></i>
-                                    </a>
+
+                                    <?php endwhile;?>
+
+
 
                                 </div>
                             </div>
@@ -319,41 +328,27 @@ get_header(); ?>
         <div class="container">
             <div class="row">
                 <div class="col-sm-10 col-sm-offset-1 ">
-                    <h2 class="align-center">What People Are Saying About George?</h2>
-                    <!----TESTIMONIALS------>
-                    <div class="row testimonials">
-                        <div class="col-sm-4 ">
-                            <img src="<?php bloginfo('stylesheet_directory')?>/assets/img/ernest.png">
-                        </div>
-                        <div class="col-sm-8">
-                            <blockquote>George I would really like to thank you for the
-                                excellent collaboration we had.
-                                <cite> - Stellatos Evangelos, Professor in National University of Athens. </cite>
-                            </blockquote>
-                        </div>
-                    </div>
-                    <div class="row testimonials">
-                        <div class="col-sm-4 ">
-                            <img src="<?php bloginfo('stylesheet_directory')?>/assets/img/aj.png">
-                        </div>
-                        <div class="col-sm-8">
-                            <blockquote>Thats magic mate thanks! Thanks for your help.
-                                <cite> - Christopher Daly, Web Developer.</cite>
-                            </blockquote>
-                        </div>
-                    </div>
-                    <div class="row testimonials">
-                        <div class="col-sm-4 ">
-                            <img src="<?php bloginfo('stylesheet_directory')?>/assets/img/ben.png">
-                        </div>
-                        <div class="col-sm-8">
-                            <blockquote>Thank you George for building and maintaining
-                                our site for so many years.
-                                <cite> - Kostas Michalis, Co-owner of farmaparnassou.gr.</cite>
-                            </blockquote>
-                        </div>
-                    </div>
+                    <h2 class="align-center"><?php echo $testimonials_title?></h2>
 
+                    <!--Starts the oops for testimonial post-->
+                    <?php $loop = new WP_Query(array('post_type' => 'testimonial',
+                        'orderby' => 'post_id', 'order' => 'ASC'));?>
+                    <?php while ($loop->have_posts()): $loop->the_post(); ?>
+                        <!----TESTIMONIALS------>
+                        <div class="row testimonials">
+                            <div class="col-sm-4 ">
+
+                                <?php if(has_post_thumbnail()){
+                                    the_post_thumbnail(array(200,200));//If someone puts a different size image it will become 200x200
+                                } ?>
+                            </div>
+                            <div class="col-sm-8">
+                                <blockquote><?php the_content()?>
+                                    <cite>&ndash;<?php the_title()?> </cite>
+                                </blockquote>
+                            </div>
+                        </div>
+                    <?php endwhile;?>
                 </div>
             </div>
         </div>
