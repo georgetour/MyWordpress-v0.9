@@ -30,17 +30,17 @@ $testimonials_title = get_field('testimonials_title');
 
 get_header(); ?>
 
-<?php get_template_part('template-parts/content','hero')?>
+<?php get_template_part('content','hero')?>
 
-<?php get_template_part('template-parts/content','quote_line')?>
+<?php get_template_part('content','quote_line')?>
 
-<?php get_template_part('template-parts/content','aboutWordpress')?>
+<?php get_template_part('content','aboutWordpress')?>
 
-<?php get_template_part('template-parts/content','benefits')?>
+<?php get_template_part('content','benefits')?>
 
-<?php get_template_part('template-parts/content','wordpressFeatures')?>
+<?php get_template_part('content','wordpressFeatures')?>
 
-<?php get_template_part('template-parts/content','finaSiteFeatures')?>
+<?php get_template_part('content','finaSiteFeatures')?>
 
 
 
