@@ -656,7 +656,7 @@ footer {
 	height: 200px; }
 
 .feature-image-default {
-	background: url("/wp-content/themes/test-wordpress-and-bootstrap/assets/img/stuff-feature.jpg") no-repeat;
+	background: url("assets/img/stuff-feature.jpg") no-repeat;
 	background-size: cover; }
 
 .feature-image-default-alt {
@@ -775,6 +775,7 @@ a:hover {
 	padding: 20px 0 0; }
 
 /*=========== BLOG LAYOUT END ==============>*/
+
 /*Resources page ========================>*/
 .resource {
 	float: left;
@@ -782,6 +783,10 @@ a:hover {
 	margin: 0 3% 40px 0; }
 .resource:nth-child(3n) {
 	margin-right: 0; }
+
+.resources-img{
+	max-height: 200px;
+}
 
 /*==========Forms=====*/
 input, textarea {

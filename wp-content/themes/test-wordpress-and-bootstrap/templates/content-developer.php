@@ -47,7 +47,7 @@ $right_number_text  = get_field('right_number_text');
                     </div>
 
                     <div class=" col-md-4  developer-image"><!--Right column--->
-                        <img style="width: 50%" class="img-responsive img-center" src="<?php echo $developer_image['url']?>" alt="Developer George Tourtsinakis">
+                        <img  class="img-responsive resources-img" src="<?php echo $developer_image['url']?>" alt="Developer George Tourtsinakis">
                     </div>
                 </div>
                 <div class="row">
