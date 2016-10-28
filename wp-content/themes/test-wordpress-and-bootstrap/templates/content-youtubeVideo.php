@@ -7,10 +7,7 @@ $youtube_video_link     = get_field('youtube_video_link');
 
 ?>
 <div class="row">
-
-
-
-
+    
     <!-- YOUTUBE VIDEO ------------------------>
     <section id="youtube-video" class="section-padding">
         <div class="container">

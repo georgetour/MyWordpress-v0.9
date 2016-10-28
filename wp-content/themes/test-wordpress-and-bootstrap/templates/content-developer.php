@@ -38,7 +38,7 @@ $right_number_text  = get_field('right_number_text');
                                         <i class="<?php the_field('social_icons') ?>"></i>
                                     </a>
 
-                                <?php endwhile;?>
+                                <?php endwhile; wp_reset_query()?>
 
 
 
