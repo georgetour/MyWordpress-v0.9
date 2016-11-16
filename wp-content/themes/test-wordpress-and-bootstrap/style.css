@@ -711,8 +711,11 @@ a:hover {
 .post header h1 {
 	font-size: 24px; }
 
-.post-image {
-	height: auto; }
+.post-image img{
+
+	width: 100%;
+
+}
 
 .post-details {
 	width: 90%;

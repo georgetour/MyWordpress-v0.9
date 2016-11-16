@@ -15,33 +15,40 @@
 		if ( is_single() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
 		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+			the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
 		endif;
 
 		if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php test_wordpress_and_bootstrap_posted_on(); ?>
-		</div><!-- .entry-meta -->
+			<div class="post-details">
+				<i class="fa fa-user"></i> <?php the_author();?>
+				<i class="fa fa-clock-o"></i><time> <?php the_date();?></time>
+				<!-- The category function takes three arguments https://codex.wordpress.org/Function_Reference/the_category-->
+				<i class="fa fa-folder"></i><?php the_category(', ');?>
+
+				<i class="fa fa-tags"></i><?php the_tags();?>
+				<div class="post-comments-badge">
+					<!--If you leave the comments_number empty it brakes the layout-->
+					<a  href=""><i class="fa fa-comments"></i><?php comments_number(0,1,'%')?></a>
+				</div><!--post comments badge-->
+
+				<?php edit_post_link('Edit','<div><i class="fa fa-pencil"></i>','</div>')?>
+
+			</div><!-- post details----->
 		<?php
 		endif; ?>
 	</header><!-- .entry-header -->
 
-	<div class="entry-content">
-		<?php
-			the_content( sprintf(
-				/* translators: %s: Name of current post. */
-				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'test-wordpress-and-bootstrap' ), array( 'span' => array( 'class' => array() ) ) ),
-				the_title( '<span class="screen-reader-text">"', '"</span>', false )
-			) );
+	<?php if(has_post_thumbnail()){//check for post image ?>
+		<div class="post-image">
+			<?php the_post_thumbnail()?>
+		</div><!--post image--->
+	<?php }?>
 
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'test-wordpress-and-bootstrap' ),
-				'after'  => '</div>',
-			) );
-		?>
-	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
-		<?php test_wordpress_and_bootstrap_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+	<div class="post-excerpt">
+		<?php the_excerpt();?>
+	</div>
+
+
+
 </article><!-- #post-## -->
