@@ -43,7 +43,7 @@
                 <h3><a href="post.php">Blog title here</a></h3>
 
                 <div class="post-details">
-                    <i class="fa fa-user"></i> GeorgeTourtsinakis
+                    <i class="fa fa-user"></i> George Tourtsinakis
                     <i class="fa fa-clock-o"></i>
                     <time> August 7, 2014</time>
                     <i class="fa fa-folder"></i>
@@ -77,7 +77,7 @@
                     <h3><a href="post.php">Blog title here</a></h3>
 
                     <div class="post-details">
-                        <i class="fa fa-user"></i> GeorgeTourtsinakis
+                        <i class="fa fa-user"></i> George Tourtsinakis
                         <i class="glyphicon glyphicon-time"></i>
                         <time> August 7, 2014</time>
                         <i class="fa fa-folder-open-alt"></i>

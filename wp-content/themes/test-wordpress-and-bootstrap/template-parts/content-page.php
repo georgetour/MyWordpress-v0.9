@@ -11,33 +11,43 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		<?php
+		if ( is_single() ) :
+			the_title( '<h1 class="entry-title">', '</h1>' );
+		else :
+			the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
+		endif;
+
+		if ( 'post' == get_post_type() ) : ?>
+			<div class="post-details">
+				<i class="fa fa-user"></i> <?php the_author();?>
+				<i class="fa fa-clock-o"></i><time> <?php the_date();?></time>
+				<!-- The category function takes three arguments https://codex.wordpress.org/Function_Reference/the_category-->
+				<i class="fa fa-folder"></i> <?php the_category(', ');?>
+
+				<i class="fa fa-tags"></i><?php the_tags();?>
+				<div class="post-comments-badge">
+					<!--If you leave the comments_number empty it brakes the layout-->
+					<a  href="<?php comment_link()?>"><i class="fa fa-comments"></i><?php comments_number(0,1,'%')?></a>
+				</div><!--post comments badge-->
+
+				<?php edit_post_link('Edit','<div><i class="fa fa-pencil"></i>','</div>')?>
+
+			</div><!-- post details----->
+			<?php
+		endif; ?>
 	</header><!-- .entry-header -->
 
-	<div class="entry-content">
-		<?php
-			the_content();
 
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'test-wordpress-and-bootstrap' ),
-				'after'  => '</div>',
-			) );
-		?>
-	</div><!-- .entry-content -->
+	<?php if(has_post_thumbnail()){//check for post image ?>
+		<div class="post-image">
+			<?php the_post_thumbnail()?>
+		</div><!--post image--->
+	<?php }?>
 
-	<?php if ( get_edit_post_link() ) : ?>
-		<footer class="entry-footer">
-			<?php
-				edit_post_link(
-					sprintf(
-						/* translators: %s: Name of current post */
-						esc_html__( 'Edit %s', 'test-wordpress-and-bootstrap' ),
-						the_title( '<span class="screen-reader-text">"', '"</span>', false )
-					),
-					'<span class="edit-link">',
-					'</span>'
-				);
-			?>
-		</footer><!-- .entry-footer -->
-	<?php endif; ?>
+
+	<div class="post-body">
+		<?php  the_content();?>
+	</div>
+
 </article><!-- #post-## -->

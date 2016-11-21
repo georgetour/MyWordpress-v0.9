@@ -23,12 +23,12 @@
 				<i class="fa fa-user"></i> <?php the_author();?>
 				<i class="fa fa-clock-o"></i><time> <?php the_date();?></time>
 				<!-- The category function takes three arguments https://codex.wordpress.org/Function_Reference/the_category-->
-				<i class="fa fa-folder"></i><?php the_category(', ');?>
+				<i class="fa fa-folder"></i> <?php the_category(', ');?>
 
 				<i class="fa fa-tags"></i><?php the_tags();?>
 				<div class="post-comments-badge">
 					<!--If you leave the comments_number empty it brakes the layout-->
-					<a  href=""><i class="fa fa-comments"></i><?php comments_number(0,1,'%')?></a>
+					<a  href="<?php comment_link()?>"><i class="fa fa-comments"></i><?php comments_number(0,1,'%')?></a>
 				</div><!--post comments badge-->
 
 				<?php edit_post_link('Edit','<div><i class="fa fa-pencil"></i>','</div>')?>

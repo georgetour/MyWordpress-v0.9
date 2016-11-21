@@ -375,6 +375,10 @@ h1, h2 {
 h3 {
 	margin: 20px 0; }
 
+h1 small{
+	color: white;
+}
+
 .img-logo {
 	width: 200px; }
 
@@ -632,11 +636,30 @@ VERTICAL ALIGN WORKS PERFECTLY*/
 	margin-top: 15px; }
 
 footer {
-	height: 50px;
+
 	padding-top: 15px;
 	background-color: #3e4249;
-	text-align: center;
+
 	color: white; }
+
+/*Custom cooments style*/
+#comments footer{
+	background: none;
+	color: inherit;
+}
+
+#comments footer a{
+	color: inherit;
+}
+#comments .comment-metadata{
+	margin: 10px 0 0;
+}
+
+
+
+#backToTop{
+	color: orange;
+}
 
 #backToTop {
 	padding: 0;
@@ -711,9 +734,14 @@ a:hover {
 .post header h1 {
 	font-size: 24px; }
 
-.post-image img{
 
+.post-image img{
+	height: 100%;
 	width: 100%;
+	max-height: 300px;
+	max-width: 500px;
+	display: block;
+	margin: auto;
 
 }
 
@@ -753,7 +781,7 @@ a:hover {
 	background-color: #93c364; }
 
 #comments h3 {
-	text-align: center; }
+	text-align: left; }
 #comments h4 {
 	font-size: 1.3em; }
 #comments ol {

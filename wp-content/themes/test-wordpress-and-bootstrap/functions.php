@@ -92,8 +92,8 @@ function test_wordpress_and_bootstrap_widgets_init() {
 		'description'   => esc_html__( 'Add widgets here.', 'test-wordpress-and-bootstrap' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
 	) );
 }
 add_action( 'widgets_init', 'test_wordpress_and_bootstrap_widgets_init' );
@@ -153,7 +153,8 @@ add_filter( 'image_send_to_editor', 'remove_image_size_attributes' );
 //Replace the excerpt "more" text by a link
 function new_excerpt_more($more){
 	global $post;
-	return '... <a class="moretag" href="'. get_permalink($post->ID) . '"> continue reading &raquo;</a>';
+	// Declare global $more (before the loop).
+	return '... <a class="moretag" href="'. get_permalink($post->ID) . '"> Continue reading &raquo;</a>';
 
 }
 //It adds the new function to the orginal wordpress function
