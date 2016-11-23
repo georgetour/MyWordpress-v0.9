@@ -9,15 +9,20 @@
 
 get_header(); ?>
 
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+	<!--Top Image-------------->
+	<section class="top-image feature-image-default-alt" data-type="background" data-speed="2">
+		<h1 class="top-header"><?php printf( esc_html__( 'Search Results for: %s', 'test-wordpress-and-bootstrap' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+	</section><!--End top image--->
+
+	<div class="container">
+		<div id="primary" class="row">
+			<main id="content" class="col-sm-8">
+
 
 		<?php
 		if ( have_posts() ) : ?>
 
-			<header class="page-header">
-				<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'test-wordpress-and-bootstrap' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-			</header><!-- .page-header -->
+
 
 			<?php
 			/* Start the Loop */
@@ -34,15 +39,22 @@ get_header(); ?>
 
 			the_posts_navigation();
 
-		else :
+			else :
 
 			get_template_part( 'template-parts/content', 'none' );
 
-		endif; ?>
+			endif; ?>
 
-		</main><!-- #main -->
-	</section><!-- #primary -->
+			</main><!--End #content-->
+
+			<!--===SIDEBAR===-->
+			<aside class="col-sm-4">
+				<?php get_sidebar();?>
+			</aside>
+
+		</div><!--End primary row-->
+	</div><!--End container-->
 
 <?php
-get_sidebar();
+
 get_footer();

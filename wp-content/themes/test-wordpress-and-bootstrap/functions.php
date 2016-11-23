@@ -45,6 +45,7 @@ function test_wordpress_and_bootstrap_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary', 'test-wordpress-and-bootstrap' ),
+		'footer' => esc_html__( 'Footer Menu', 'test-wordpress-and-bootstrap' )
 	) );
 
 	/*
@@ -85,10 +86,22 @@ add_action( 'after_setup_theme', 'test_wordpress_and_bootstrap_content_width', 0
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
+
+//We can add new sidebar in this function with the function register_sidebar
+//and where you want to use it you call it with dynamic_sidebar(====id here===)
 function test_wordpress_and_bootstrap_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar', 'test-wordpress-and-bootstrap' ),
 		'id'            => 'sidebar-1',
+		'description'   => esc_html__( 'Add widgets here.', 'test-wordpress-and-bootstrap' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
+	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'New Sidebar', 'test-wordpress-and-bootstrap' ),
+		'id'            => 'sidebar-2',
 		'description'   => esc_html__( 'Add widgets here.', 'test-wordpress-and-bootstrap' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',

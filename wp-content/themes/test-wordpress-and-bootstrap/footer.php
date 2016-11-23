@@ -34,15 +34,31 @@
 			<div class=" col-sm-3 footer-logo">
 				<p><a  href="/"><img class="img-logo img-responsive" src="<?php bloginfo('stylesheet_directory')?>/assets/img/logo-top.png" alt="Test Wordpress logo"></a></p>
 			</div>
-			<div  class="col-sm-9">
-				<nav>
-					<ul  class="list-unstyled list-inline pull-right">
-						<li>Created by George Tourtsinakis</li>
-						<li><a id="backToTop" href="#">Back to TOP</a></li>
-					</ul>
-				</nav>
+
+			<div  class="col-sm-6 ">
+
+					<?php wp_nav_menu(array(
+							'theme_location'    =>'footer',
+							'container'         => 'nav',
+							'menu_class'        => 'list-unstyled list-inline'
+						)
+					)?>
+			</div>
+			<div class="col-sm-3 ">
+				<a  id="backToTop" href="#">Back to TOP</a>
 			</div>
 		</div>
+			<div class="row">
+				<div class="col-sm-12">
+				<p  class="list-unstyled list-inline ">
+					Created by George Tourtsinakis All rights reserved
+
+				</p>
+				</div>
+
+			</div>
+
+
 	</div><!--End footer container------->
 </footer><!--End footer----------------->
 
