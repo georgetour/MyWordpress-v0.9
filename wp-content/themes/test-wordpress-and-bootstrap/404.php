@@ -9,56 +9,71 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+	<section class="top-image feature-image-default" data-type="background" data-speed="2">
+		<h1 class="top-header">Where that page went???</h1>
+	</section><!--End top image--->
 
-			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'test-wordpress-and-bootstrap' ); ?></h1>
-				</header><!-- .page-header -->
+	<div class="container">
+		<div id="primary" class="row">
+			<main id="content" class="col-sm-8">
+				<div class="error-404 not-found">
+					<div class="page-content">
+						<h2>Don't worry we will get you back !</h2>
 
-				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'test-wordpress-and-bootstrap' ); ?></p>
+						<!--==RESOURCES===-->
+						<h3>Resources</h3>
+						<p>Maybe you were looking for a specific resource?</p>
+						<?php $loop = new WP_Query(array('post_type' => 'resource',
+							'orderby' => 'post_id','order' => 'ASC' )); ?>
 
-					<?php
-						get_search_form();
+						<div class="resource-row clearfix">
 
-						the_widget( 'WP_Widget_Recent_Posts' );
+							<?php while($loop->have_posts()) : $loop->the_post()?>
 
-						// Only show the widget if site has multiple categories.
-						if ( test_wordpress_and_bootstrap_categorized_blog() ) :
-					?>
+								<?php
+								$resource_image = get_field('resource_image');
+								$resource_url   = get_field('resource_url');
+								$button_text    = get_field('button_text');
+								?>
 
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'test-wordpress-and-bootstrap' ); ?></h2>
-						<ul>
-						<?php
-							wp_list_categories( array(
-								'orderby'    => 'count',
-								'order'      => 'DESC',
-								'show_count' => 1,
-								'title_li'   => '',
-								'number'     => 10,
-							) );
-						?>
-						</ul>
-					</div><!-- .widget -->
+								<div class="resource">
+									<img class="resources-img img-responsive"  src="<?php echo $resource_image['url']?>" about="<?php echo $resource_image['alt']?>">
 
-					<?php
-						endif;
+									<h3><a href="<?php echo $resource_url?>"><?php the_title()?></a></h3>
+									<p><?php the_excerpt()?></p>
 
-						/* translators: %1$s: smiley */
-						$archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'test-wordpress-and-bootstrap' ), convert_smilies( ':)' ) ) . '</p>';
-						the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
+									<!--Button to add-->
+									<?php if(!empty($button_text)):?>
 
-						the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
+									<a href="<?php echo $resource_url?>" class="btn btn-success">
+										<?php echo $button_text?>
+									</a>
 
-				</div><!-- .page-content -->
-			</section><!-- .error-404 -->
+									<?php endif; ?><!--End button-->
+								</div>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+							<?php endwhile; wp_reset_query()?>
 
-<?php
-get_footer();
+						</div>
+
+					</div>
+				</div>
+			</main>
+			<!--=====Sidebar========-->
+			<aside class="col-sm-4">
+				<?php get_sidebar()?>
+
+			</aside>
+			<h4><a href="<?php echo esc_url(home_url())?>">Back to Home No Worries!</a></h4>
+
+
+
+
+		</div><!--End primary-->
+
+	</div><!--End container-->
+
+
+
+
+<?php get_footer();?>

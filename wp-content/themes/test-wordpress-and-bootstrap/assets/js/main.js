@@ -43,21 +43,37 @@ $(document).ready(function () {
     };
 
     switch(location){
-        case '/Wordpress-Live-Test/index.php':
-        case '/Wordpress-Live-Test/':
-            activeClassOnly('ul li:nth-child(1)','ul > li:nth-child(2),ul > li:nth-child(3)');
+        case '/TestWordpress/index.php':
+        case '/TestWordpress/':
+            activeClassOnly('ul li:nth-child(1)','ul > li:nth-child(2),ul > li:nth-child(3),ul li:nth-child(5)');
             break;
 
-        case '/Wordpress-Live-Test/blog.php':
-        case  '/Wordpress-Live-Test/post.php':
-            activeClassOnly('ul li:nth-child(2)','ul > li:nth-child(1),ul > li:nth-child(3)');
+        case '/TestWordpress/blog/':
+            activeClassOnly('ul li:nth-child(3)','ul > li:nth-child(2),ul > li:nth-child(1),ul li:nth-child(5)');
             break;
 
-        case '/Wordpress-Live-Test/resources.php':
-            activeClassOnly('ul li:nth-child(3)',('ul > li:nth-child(2),ul > li:nth-child(1)'));
+        case '/TestWordpress/resources/':
+            activeClassOnly('ul li:nth-child(2)',('ul > li:nth-child(1),ul > li:nth-child(3),ul li:nth-child(5)'));
+            break;
+
+        case '/TestWordpress/contact/':
+            activeClassOnly('ul li:nth-child(5)','ul > li:nth-child(1),ul > li:nth-child(3),ul > li:nth-child(2)');
             break;
     }
     //End active class according to location
 
+
+
+    //Portfolio redirection button
+    $('#menu-item-297').on('click',function () {
+        event.preventDefault();
+        $('#menu-item-297').find('a').attr('data-toggle', 'modal');
+        $('#menu-item-297').find('a').attr('data-target', '#checkMyWorkModal');
+    });
+
+    $('#redirect').on('click',function () {
+        event.preventDefault();
+        window.open('http://www.besmartbesimple.com');
+    });
     
 });

@@ -1,7 +1,7 @@
 <?php
 
 //Custom fields
-$wordpress_password = get_post_meta(28, 'wordpress_password',true); //Three arguments id of the page, value of the string, true single or faALSE array of custom fields
+$at_your_needs = get_post_meta(28, 'at_your_needs',true); //Three arguments id of the page, value of the string, true single or faALSE array of custom fields
 $how_it_works = get_post_meta(28, 'how_it_works',true);
 $create_site = get_post_meta(28, 'create_site',true);
 $enroll_url = get_post_meta(28, 'enroll_url',true);
@@ -16,25 +16,24 @@ $button_text =get_post_meta(28, 'button_text',true);
         <div class="container clearfix">
             <div class="row">
                 <div class="col-sm-5 "><!--Left column-->
-                    <img class=" img-responsive img-center" src="<?php bloginfo('stylesheet_directory')?>/assets/img/test-wordpress-logo.png" alt="Test Wordpress">
+                    <img class=" img-responsive img-center" src="<?php bloginfo('stylesheet_directory')?>/assets/img/big-logo-mywordpress.png" alt="My Wordpress big logo">
                 </div><!--End Left column----->
 
                 <!--Right column-->
                 <div class="col-sm-7">
                     <!--This one pulls from general settings in dashboard Site Title -->
                     <h1 ><?php bloginfo('name');?></h1>
-                    <h2 >You will see how Wordpress works!</h2>
                     <!--This one pulls from general settings in dashboard Tag Line -->
-                    <p><?php bloginfo('description')?>
-                    </p>
+                    <h2><?php bloginfo('description')?>
+                    </h2>
                     <div class="price-timeline  ">
                         <div class=" price ">
-                            <h4>Get your Wordpress <br>password.
-                                <div class="price-sphere"><?php echo $wordpress_password?></div></h4>
+                            <h4>Exactly at your <br>needs.
+                                <div class="price-sphere"><?php echo $at_your_needs?></div></h4>
                         </div>
 
                         <div class="price">
-                            <h4>Test how Wordpress works.
+                            <h4>Customer Support!
                                 <div class="price-sphere"><?php echo $how_it_works?></div>
                             </h4>
                         </div>
@@ -43,7 +42,9 @@ $button_text =get_post_meta(28, 'button_text',true);
                                 <div class="price-sphere"><?php echo $create_site?></div>
                             </h4>
                         </div>
-                        <p style="margin-top: 70px"><a class="btn btn-lg btn-danger" href="<?php echo $enroll_url?>" role="button"><?php echo $button_text?></a></p>
+                        <p style="margin-top: 70px"><a class="btn btn-lg btn-danger " data-toggle="modal" data-target="#checkMyWorkModal" href="<?php echo $enroll_url?>"><?php echo $button_text?></a></p>
+
+
                     </div><!--Right column end-->
 
                 </div>

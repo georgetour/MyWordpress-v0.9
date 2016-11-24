@@ -21,8 +21,8 @@
 	<link href="<?php bloginfo('stylesheet_directory')?>/assets/css/bootstrap.min.css" rel="stylesheet">
 
 	<!-- Font Awesome Icons -->
-	<link href="<?php bloginfo('stylesheet_directory')?>/assets/css/font-awesome/font-awesome.min.css" rel="stylesheet">
-	
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
     <link href='http://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
 
 <?php wp_head(); ?>
@@ -56,7 +56,7 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="/"><img class="img-logo img-responsive" src="<?php bloginfo('stylesheet_directory')?>/assets/img/logo-top.png"></a>
+						<a class="navbar-brand" href="/"><img class="img-logo img-responsive" src="<?php bloginfo('stylesheet_directory')?>/assets/img/top-logo.png"></a>
 
 					</div>
 
