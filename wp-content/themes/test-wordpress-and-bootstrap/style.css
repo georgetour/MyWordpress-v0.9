@@ -348,7 +348,6 @@ html {
 /*Body layout*/
 body {
 	min-height: 100%;
-	font-family: "Raleway", Helvetica, sans-serif;
 	font-size: 18px;
 	background: url('assets/img/tile.jpg') top left repeat;
 	padding: 0;
@@ -527,8 +526,9 @@ i.features-sprites {
 
 
 .img-center {
-	margin-right: auto;
-	margin-left: auto; }
+	margin: 0 auto;
+	display: block;
+]}
 
 
 .features-img-boxes {
@@ -834,6 +834,7 @@ a:hover {
 
 .resources-img{
 	height: 200px;
+
 }
 
 /*==========Forms=====*/
