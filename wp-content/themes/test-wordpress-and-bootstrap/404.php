@@ -40,7 +40,7 @@ get_header(); ?>
 									<img class="resources-img img-responsive"  src="<?php echo $resource_image['url']?>" about="<?php echo $resource_image['alt']?>">
 
 									<h3><a href="<?php echo $resource_url?>"><?php the_title()?></a></h3>
-									<p><?php the_excerpt()?></p>
+									<p><?php the_content()?></p>
 
 									<!--Button to add-->
 									<?php if(!empty($button_text)):?>
