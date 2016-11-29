@@ -39,7 +39,7 @@
 
 					<?php wp_nav_menu(array(
 							'theme_location'    =>'footer',
-							'container'         => 'nav',
+							'container'         => 'ul',
 							'menu_class'        => 'list-unstyled list-inline'
 						)
 					)?>
@@ -80,7 +80,7 @@
 
 			<div class="modal-body">
 				<p>Simply enter your email and idea for your site to get quote <em>for free!</em>.</p>
-				<?php echo do_shortcode('[contact-form-7 id="277" title="Modal form"]');?>
+				<?php echo do_shortcode('[contact-form-7 id="201" title="Pop Up form"]');?>
 
 				<hr>
 

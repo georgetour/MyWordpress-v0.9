@@ -348,6 +348,7 @@ html {
 /*Body layout*/
 body {
 	min-height: 100%;
+	font-family: "Raleway", Helvetica, sans-serif;
 	font-size: 18px;
 	background: url('assets/img/tile.jpg') top left repeat;
 	padding: 0;
@@ -383,6 +384,10 @@ h1 small{
 
 .displayInlineBlock {
 	display: inline-block; }
+
+#menu-footer-links li a{
+	color: white;
+}
 
 /*Hero-------*/
 #hero {
@@ -526,9 +531,8 @@ i.features-sprites {
 
 
 .img-center {
-	margin: 0 auto;
-	display: block;
-]}
+	margin-right: auto;
+	margin-left: auto; }
 
 
 .features-img-boxes {
@@ -834,7 +838,6 @@ a:hover {
 
 .resources-img{
 	height: 200px;
-
 }
 
 /*==========Forms=====*/

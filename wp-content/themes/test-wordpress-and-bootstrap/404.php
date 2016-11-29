@@ -23,7 +23,7 @@ get_header(); ?>
 						<!--==RESOURCES===-->
 						<h3>Resources</h3>
 						<p>Maybe you were looking for a specific resource?</p>
-						<?php $loop = new WP_Query(array('post_type' => 'resource',
+						<?php $loop = new WP_Query(array('post_type' => 'resources2',
 							'orderby' => 'post_id','order' => 'ASC' )); ?>
 
 						<div class="resource-row clearfix">
@@ -40,7 +40,7 @@ get_header(); ?>
 									<img class="resources-img img-responsive"  src="<?php echo $resource_image['url']?>" about="<?php echo $resource_image['alt']?>">
 
 									<h3><a href="<?php echo $resource_url?>"><?php the_title()?></a></h3>
-									<p><?php the_content()?></p>
+									<p><?php the_excerpt()?></p>
 
 									<!--Button to add-->
 									<?php if(!empty($button_text)):?>

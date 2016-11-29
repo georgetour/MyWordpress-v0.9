@@ -38,7 +38,7 @@ $top_header_url = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
 
                 <?php endwhile; ?><!--End while for description top-->
 
-                <?php $loop = new WP_Query(array('post_type' => 'resource',
+                <?php $loop = new WP_Query(array('post_type' => 'resources2',
                     'orderby' => 'post_id','order' => 'ASC' )); ?>
 
                 <hr>
@@ -54,7 +54,7 @@ $top_header_url = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
                         ?>
 
                     <div class="resource">
-                    <img class="resources-img img-responsive img-center"  src="<?php echo $resource_image['url']?>" about="<?php echo $resource_image['alt']?>">
+                    <img class="resources-img img-responsive"  src="<?php echo $resource_image['url']?>" about="<?php echo $resource_image['alt']?>">
 
                         <h3><a href="<?php echo $resource_url?>"><?php the_title()?></a></h3>
                         <p><?php the_content()?></p>

@@ -48,13 +48,15 @@ $(document).ready(function () {
             activeClassOnly('ul li:nth-child(1)','ul > li:nth-child(2),ul > li:nth-child(3),ul li:nth-child(5)');
             break;
 
-        case '/TestWordpress/blog/':
-            activeClassOnly('ul li:nth-child(3)','ul > li:nth-child(2),ul > li:nth-child(1),ul li:nth-child(5)');
+        case '/TestWordpress/resources/':
+            activeClassOnly('ul li:nth-child(3)',('ul > li:nth-child(1),ul > li:nth-child(2),ul li:nth-child(5)'));
             break;
 
-        case '/TestWordpress/resources/':
-            activeClassOnly('ul li:nth-child(2)',('ul > li:nth-child(1),ul > li:nth-child(3),ul li:nth-child(5)'));
+        case '/TestWordpress/blog/':
+            activeClassOnly('ul li:nth-child(2)','ul > li:nth-child(3),ul > li:nth-child(1),ul li:nth-child(5)');
             break;
+
+
 
         case '/TestWordpress/contact/':
             activeClassOnly('ul li:nth-child(5)','ul > li:nth-child(1),ul > li:nth-child(3),ul > li:nth-child(2)');
@@ -65,11 +67,18 @@ $(document).ready(function () {
 
 
     //Portfolio redirection button
-    $('#menu-item-297').on('click',function () {
+    $('#menu-item-212').on('click',function () {
         event.preventDefault();
-        $('#menu-item-297').find('a').attr('data-toggle', 'modal');
-        $('#menu-item-297').find('a').attr('data-target', '#checkMyWorkModal');
+        $('#menu-item-212').find('a').attr('data-toggle', 'modal');
+        $('#menu-item-212').find('a').attr('data-target', '#checkMyWorkModal');
     });
+
+    $('#menu-item-216').on('click',function () {
+        event.preventDefault();
+        $('#menu-item-216').find('a').attr('data-toggle', 'modal');
+        $('#menu-item-216').find('a').attr('data-target', '#checkMyWorkModal');
+    });
+
 
     $('#redirect').on('click',function () {
         event.preventDefault();
