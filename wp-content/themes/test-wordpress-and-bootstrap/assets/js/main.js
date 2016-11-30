@@ -43,22 +43,25 @@ $(document).ready(function () {
     };
 
     switch(location){
-        case '/TestWordpress/index.php':
-        case '/TestWordpress/':
+        case '/':
+
             activeClassOnly('ul li:nth-child(1)','ul > li:nth-child(2),ul > li:nth-child(3),ul li:nth-child(5)');
             break;
 
-        case '/TestWordpress/resources/':
+        case '/resources/':
+
             activeClassOnly('ul li:nth-child(3)',('ul > li:nth-child(1),ul > li:nth-child(2),ul li:nth-child(5)'));
             break;
 
-        case '/TestWordpress/blog/':
+        case '/blog/':
+
             activeClassOnly('ul li:nth-child(2)','ul > li:nth-child(3),ul > li:nth-child(1),ul li:nth-child(5)');
             break;
 
 
 
-        case '/TestWordpress/contact/':
+        case '/contact/':
+
             activeClassOnly('ul li:nth-child(5)','ul > li:nth-child(1),ul > li:nth-child(3),ul > li:nth-child(2)');
             break;
     }

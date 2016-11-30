@@ -1,0 +1,75 @@
+********************************************************************************
+DUPLICATOR-LITE PACKAGE-LOG: 2016-11-30 12:00:36
+NOTICE: Do NOT post to public sites or forums 
+********************************************************************************
+VERSION:	1.1.24
+WORDPRESS:	4.6.1
+PHP INFO:	5.6.21 | SAPI: apache2handler
+SERVER:		Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.21 
+PHP TIME LIMIT: (0) no time limit imposed 
+PHP MAX MEMORY: 2048M (128M default) 
+MEMORY STACK: 17.5MB 
+
+********************************************************************************
+DATABASE:
+********************************************************************************
+BUILD MODE:   PHP(query limit - 100)
+MYSQLTIMEOUT: 5000
+MYSQLDUMP:    Not Supported 
+TABLES: total:25 | filtered:0 | create:25 
+FILTERED: [] 
+SQL CREATED: 20161130_mywordpress_583ebf362276b7881161130115950_database.sql 
+SQL FILE SIZE: 1.57MB (1649950) 
+SQL FILE TIME: 2016-11-30 12:00:36 
+SQL RUNTIME: 0.11 sec. 
+
+******************************************************************************** 
+ARCHIVE (ZIP): 
+******************************************************************************** 
+ARCHIVE DIR:  C:/xampp2/htdocs/TestWordpress 
+ARCHIVE FILE: 20161130_mywordpress_583ebf362276b7881161130115950_archive.zip 
+FILTERS: *OFF* 
+DIRS: not set 
+EXTS:  not set 
+---------------------------------------- 
+COMPRESSING 
+SIZE:	119.92MB 
+STATS:	Dirs 505 | Files 4,736 
+SQL ADDED: 20161130_mywordpress_583ebf362276b7881161130115950_database.sql 
+ZipArchive Object
+(
+    [status] => 0
+    [statusSys] => 0
+    [numFiles] => 5241
+    [filename] => C:\xampp2\htdocs\TestWordpress\wp-snapshots\tmp\20161130_mywordpress_583ebf362276b7881161130115950_archive.zip
+    [comment] => 
+)
+ 
+COMPRESSION RESULT: '1' 
+COMPRESSED SIZE: 99.32MB 
+ARCHIVE RUNTIME: 13.56 sec. 
+MEMORY STACK: 19MB 
+
+******************************************************************************** 
+MAKE INSTALLER: 
+******************************************************************************** 
+Build Start 
+Build Finished 
+Preping for use 
+Template parsed with new data 
+Complete [C:/xampp2/htdocs/TestWordpress/wp-snapshots/tmp/20161130_mywordpress_583ebf362276b7881161130115950_installer.php] 
+Added to archive 
+
+******************************************************************************** 
+INTEGRITY CHECKS: 
+******************************************************************************** 
+SQL File: 1.57MB 
+Installer File: 352.02KB 
+Archive File: 99.32MB  
+
+********************************************************************************
+RECORD ID:[1]
+TOTAL PROCESS RUNTIME: 14.09 sec.
+PEAK PHP MEMORY USED: 21MB
+DONE PROCESSING => 20161130_mywordpress 2016-11-30 12:00:50
+ 
