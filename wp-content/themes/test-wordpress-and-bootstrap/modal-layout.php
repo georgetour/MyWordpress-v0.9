@@ -7,6 +7,12 @@
         <label class="sr-only" for="email">Your email</label>
         <input type="text" class="form-control" placeholder="Your email">
     </div><!--form group--->
+
+    <div class="form-group">
+        <label class="sr-only" for="email">Your subject</label>
+        <input type="text" class="form-control" placeholder="Your email">
+    </div><!--form group--->
+
     <div class="form-group">
         <label class="sr-only" for="getIdea">Your idea</label>
         <textarea type="text" class="form-control" placeholder="Your idea" rows="6" ></textarea>

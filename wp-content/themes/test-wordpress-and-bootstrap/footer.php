@@ -51,7 +51,7 @@
 			<div class="row">
 				<div class="col-sm-12">
 				<p  class="align-center">
-					 <?php bloginfo('name')?> Created by <?php echo the_author_link()?>  &copy;<?php echo date('Y')?> All rights reserved
+					 <?php bloginfo('name')?> Created by <?php echo the_author_link()?>  &copy;<?php echo date('Y')?> as Open Source
 
 				</p>
 				</div>
