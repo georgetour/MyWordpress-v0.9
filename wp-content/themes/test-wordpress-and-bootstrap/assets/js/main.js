@@ -87,5 +87,31 @@ $(document).ready(function () {
         event.preventDefault();
         window.open('http://www.besmartbesimple.com');
     });
-    
+
+
+    $('#getQuote').submit(function (event) {
+        console.log('clicked getQuote');
+        //Recaptcha front end validation
+        var response = grecaptcha.getResponse();
+
+       
+
+        if(response.length == 0)
+        {   errorMessagebot = 'Bot bot';
+            $('#error').html(errorMessagebot);
+            $('#error').show();
+            $('#error').fadeOut(3000);
+            return false;
+        }
+        else
+        {   errorMessagebot = 'Form sent';
+            $('#error').html(errorMessagebot);
+            $('#error').show();
+            $('#error').fadeOut(3000);
+            return true;
+        }
+
+    });
+
+
 });
