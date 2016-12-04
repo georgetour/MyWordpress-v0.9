@@ -70,14 +70,14 @@ $(document).ready(function () {
 
 
     //Portfolio redirection button
-    $('#menu-item-212').on('click',function () {
-        event.preventDefault();
+    $('#menu-item-212').on('click',function (event) {
+        event.preventDefault(event);
         $('#menu-item-212').find('a').attr('data-toggle', 'modal');
         $('#menu-item-212').find('a').attr('data-target', '#checkMyWorkModal');
     });
 
-    $('#menu-item-216').on('click',function () {
-        event.preventDefault();
+    $('#menu-item-216').on('click',function (event) {
+        event.preventDefault(event);
         $('#menu-item-216').find('a').attr('data-toggle', 'modal');
         $('#menu-item-216').find('a').attr('data-target', '#checkMyWorkModal');
     });
