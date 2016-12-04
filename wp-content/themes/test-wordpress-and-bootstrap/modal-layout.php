@@ -1,4 +1,4 @@
-<form class=" " role="form">
+<form role="form">
     <div class="form-group">
         <label class="sr-only" for="name">Your name</label>
         <input type="text" class="form-control" placeholder="Your name">

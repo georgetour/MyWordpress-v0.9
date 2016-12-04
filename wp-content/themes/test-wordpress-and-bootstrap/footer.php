@@ -51,7 +51,7 @@
 			<div class="row">
 				<div class="col-sm-12">
 				<p  class="align-center">
-					 <?php bloginfo('name')?> Created by <?php echo the_author_link()?>  &copy;<?php echo date('Y')?> as Open Source
+					 <?php bloginfo('name')?> Created by <?php echo the_author_link()?> <?php echo date('Y')?> as Open Source
 
 				</p>
 				</div>
@@ -80,7 +80,8 @@
 
 			<div class="modal-body">
 				<p>Simply enter your email and idea for your site to get quote <em>for free!</em>.</p>
-				<?php echo do_shortcode('[contact-form-7 id="201" title="Pop Up form"]');?>
+				<?php wd_form_maker(10); ?>
+				<?php // echo do_shortcode('[contact-form-7 id="201" title="Pop Up form"]');?>
 				<p id="error"></p>
 
 				<hr>
@@ -129,7 +130,7 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
 <!--The template directory returns the theme parent directory like styleshhet_directory .Just for semantic purposes-->
-<!--<script src="<?php bloginfo('template_directory')?>/assets/js/jquery-2.2.4.min.js"></script>-->
+<!--<script src="<?php // bloginfo('template_directory')?>/assets/js/jquery-2.2.4.min.js"></script>-->
 <script src="<?php bloginfo('template_directory')?>/assets/js/bootstrap.min.js"></script>
 <script defer src="<?php bloginfo('template_directory')?>/assets/js/main.js"></script>
 
