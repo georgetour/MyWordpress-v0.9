@@ -25,8 +25,6 @@ get_header(); ?>
 <!--Final Site features template -->
 <?php get_template_part('templates/content','finalSiteFeatures');?>
 
-<!--Youtube Video template -->
-<?php get_template_part('templates/content','youtubeVideo');?>
 
 <!--Developer template -->
 <?php get_template_part('templates/content','developer');?>
