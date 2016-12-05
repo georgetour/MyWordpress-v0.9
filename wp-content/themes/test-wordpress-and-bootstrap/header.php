@@ -15,7 +15,7 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
-
+	<meta name="google-site-verification" content="xmV-SruFUdQNp8iQv_pxSiWb89dRv34hg33XNhrX9Vg" />
 	<!-- Bootstrap core CSS -->
 	<!-- Wordpress takes differently styles etc since its dynamic--->
 	<!--<link href="<?php bloginfo('stylesheet_directory')?>/assets/css/bootstrap.min.css" rel="stylesheet">-->
