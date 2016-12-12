@@ -131,8 +131,19 @@
 
 <!--The template directory returns the theme parent directory like styleshhet_directory .Just for semantic purposes-->
 <!--<script src="<?php // bloginfo('template_directory')?>/assets/js/jquery-2.2.4.min.js"></script>-->
-<script defer src="<?php bloginfo('template_directory')?>/assets/js/bootstrap.min.js"></script>
-<script defer src="<?php bloginfo('template_directory')?>/assets/js/main.js"></script>
+<script  src="<?php bloginfo('template_directory')?>/assets/js/bootstrap.min.js"></script>
+<script  src="<?php bloginfo('template_directory')?>/assets/js/main.js"></script>
+
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-88871503-1', 'auto');
+	ga('send', 'pageview');
+
+</script>
 
 </body>
 </html>

@@ -24,7 +24,7 @@
 	<!-- Font Awesome Icons -->
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-	<script src='https://www.google.com/recaptcha/api.js'></script>
+	<script defer src='https://www.google.com/recaptcha/api.js'></script>
 
 <?php wp_head(); ?>
 
