@@ -131,8 +131,8 @@
 
 <!--The template directory returns the theme parent directory like styleshhet_directory .Just for semantic purposes-->
 <!--<script src="<?php // bloginfo('template_directory')?>/assets/js/jquery-2.2.4.min.js"></script>-->
-<script  src="<?php bloginfo('template_directory')?>/assets/js/bootstrap.min.js"></script>
-<script  src="<?php bloginfo('template_directory')?>/assets/js/main.js"></script>
+<script defer src="<?php bloginfo('template_directory')?>/assets/js/bootstrap.min.js"></script>
+<script defer src="<?php bloginfo('template_directory')?>/assets/js/main.js"></script>
 
 <script>
 	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
