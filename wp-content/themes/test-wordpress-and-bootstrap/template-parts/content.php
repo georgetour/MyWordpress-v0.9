@@ -46,7 +46,7 @@
 
 
 	<div class="post-excerpt">
-		<?php the_excerpt();?>
+		<?php the_content();?>
 	</div>
 
 

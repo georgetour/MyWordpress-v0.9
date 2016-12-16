@@ -165,10 +165,10 @@ add_filter( 'image_send_to_editor', 'remove_image_size_attributes' );
 
 //Replace the excerpt "more" text by a link
 function new_excerpt_more($more){
-	global $post;
+	global $more;
 	// Declare global $more (before the loop).
-	return '... <a class="moretag" href="'. get_permalink($post->ID) . '"> Continue reading &raquo;</a>';
+	return '... <a class="moretag" href="'. get_permalink($more->ID) . '"> Continue reading &raquo;</a>';
 
 }
 //It adds the new function to the orginal wordpress function
-add_filter('excerpt_more','new_excerpt_more');
+add_filter('excerpt_more',$more);
