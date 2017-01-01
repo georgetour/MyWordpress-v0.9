@@ -13,7 +13,7 @@
 
 
 
-<?php wp_footer(); ?>'
+<?php wp_footer(); ?>
 
 <!-- SIGN UP ----------------------------->
 <section id="signup" data-type="background" data-speed="4" class="section-padding">
@@ -116,7 +116,7 @@
 				<p>If you agree please click the OK take me to your site. Else click anywhere or at the x to continue here.</p>
 				<hr>
 				<button id="redirect" class="btn btn-danger" value="Get quote!">OK take me to your site. >></button>
-				
+
 
 
 

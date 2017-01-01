@@ -84,7 +84,6 @@ $(document).ready(function () {
 
 
     $('#redirect').on('click',function () {
-        event.preventDefault();
         window.open('http://www.besmartbesimple.com');
     });
 

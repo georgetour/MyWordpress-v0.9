@@ -8,7 +8,7 @@ get_header();
 
 $top_header_url = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
 
-
+$resources_header = get_field("resources_header")
 
 
 ?>

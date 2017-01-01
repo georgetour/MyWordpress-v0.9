@@ -12,12 +12,14 @@
  * @package Test_Wordpress_and_Bootstrap
  */
 
-get_header(); ?>
+get_header();
+
+?>
 
 
 	<!--Top Image-------------->
 	<section class="top-image feature-image-default-alt" data-type="background" data-speed="2">
-		<h1 class="top-header">Your first blog</h1>
+		<h1 class="top-header">Some latest creations</h1>
 	</section><!--End top image--->
 
 	<!--Blog Content---------------------------->
@@ -60,6 +62,7 @@ get_header(); ?>
 
 			<!--SIDEBAR-------------->
 			<aside class="col-sm-4">
+
 			<?php get_sidebar(); ?>
 			</aside>
 
